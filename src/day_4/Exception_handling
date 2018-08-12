@@ -1,0 +1,14 @@
+프로그램 오류
+1. 컴파일 에러 - 컴파일 시에 발생하는 에러
+2. 런타임 에러 - 실행 시에 발생하는 에러
+3. 논리적 에러 - 실행은 되지만, 의도와 다르게 동작하는 것
+
+에러 / exception  차이 :  프로그램 코드에 의해서 수습 될수 있는/없는 심각한/미약한 오류
+
+Object > Throwable > Exception / Error
+
+예외의 최고 조상
+Exception class  >>  IOException / ClassNotFoundException / ... / RuntimeException
+
+예외 처리 방법
+try - catch 문
