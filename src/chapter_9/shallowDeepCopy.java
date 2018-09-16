@@ -1,8 +1,9 @@
 package chapter_9;
 
 /**
- * shallowCopy => 원본이랑 주소가 같음 / 원본 값이 바뀌면 같이 바뀜
- * deepCopy => 원본과 다른 주소
+ * shallowCopy => 원본이 가지고 있는 값만 그대로 복사 /
+ * 안의 인스턴트가 원본이랑 주소가 같음 / 원본 안의 인스턴트 값이 바뀌면 같이 바뀜
+ * deepCopy => 원본이 참조하고 있는 객체까지 복사 / 원본안의 point 인스턴트와는 다른 주소
  */
 public class shallowDeepCopy {
     public static void main(String[] args) {
@@ -55,7 +56,7 @@ class Circle implements Cloneable {
         Object obj = null;
 
         try {
-            obj = super.clone();
+            obj = super.clone(); // 원본이 가지고 있는 값만 그대로 복사
         }catch (CloneNotSupportedException e) {}
 
         return (Circle) obj;
@@ -68,7 +69,7 @@ class Circle implements Cloneable {
         }catch (CloneNotSupportedException e){}
 
         Circle c = (Circle)obj;
-        c.p = new Point(this.p.x, this.p.y);
+        c.p = new Point(this.p.x, this.p.y); // 원본이 참조하고 있는 객체까지 복사
 
         return c;
     }
